@@ -1,11 +1,11 @@
 import { useState } from 'react/cjs/react.development';
 import './App.css';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import './custom.css'
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 function App() {
@@ -55,20 +55,20 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Alert alert={alert} />
         <Navbar title='TextUtils' showAlert={showAlert} mode={mode} toogle={toggleMode} firstlink='About' ></Navbar>
-        {/* <Switch> */}
-          {/* <Route path="/about"> */}
-            {/* <About alert={alert} toogle={toggleMode} mode={mode} /> */}
-          {/* </Route> */}
-          {/* <Route path="/"> */}
+        <Switch>
+          <Route path="/about">
+            <About alert={alert} toogle={toggleMode} mode={mode} />
+          </Route>
+          <Route path="/">
             <TextForm showAlert={showAlert}mode={mode} heading="Enter Text here"></TextForm>
-          {/* </Route> */}
+          </Route>
 
 
-        {/* </Switch> */}
-      {/* </Router> */}
+        </Switch>
+      </Router>
     </>
   );
 }
